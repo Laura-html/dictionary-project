@@ -1,0 +1,14 @@
+.app-header {
+  margin: 30px 0;
+}
+
+.app-logo {
+  max-width: 200px;
+  display: block;
+  margin: 0 auto;
+}
+
+.app-footer {
+  text-align: center;
+  opacity: 65%;
+}
