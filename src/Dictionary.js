@@ -14,7 +14,7 @@ export default function Dictionary(props) {
     setResults(response.data[0]);
   }
 
-  function handlePexelsResponse(response) {
+  function handlePhotosResponse(response) {
     setPhotos(response.data.photos);
   }
 
@@ -22,11 +22,9 @@ export default function Dictionary(props) {
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
     axios.get(apiUrl).then(handleDictionaryResponse);
 
-    let pexelsApiKey =
-      "Q20IW5MBJrxhuZLgEUv5XbpwVZ8pdjXUPe4BIP36d20fVYEmh9hH7CgW";
-    let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=6`;
-    let headers = { Authorization: `Bearer ${pexelsApiKey}` };
-    axios.get(pexelsApiUrl, { headers: headers }).then(handlePexelsResponse);
+    let photosApiKey = "9245bb24b027319eb10oat71638b73cf";
+    let photosApiUrl = `https://api.shecodes.io/images/v1/search?query=${keyword}&key=${photosApiKey}`;
+    axios.get(photosApiUrl).then(handlePhotosResponse);
   }
 
   function handleSubmit(event) {
